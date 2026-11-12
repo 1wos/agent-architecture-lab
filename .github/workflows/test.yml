@@ -21,4 +21,5 @@ jobs:
       - uses: aws-actions/setup-sam@v2
       - run: uv sync --all-groups
       - run: uv run pytest -q
+      - run: uv run python -m unittest discover -s demos/1wos_retro_feedback -v
       - run: sam validate --lint --template-file infra/template.yaml
